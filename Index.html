@@ -1,0 +1,374 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradePro Academy</title>
+    <style>
+      :root {
+        --primary: #2563eb;
+        --secondary: #1e40af;
+        --accent: #3b82f6;
+        --background: #f8fafc;
+        --text: #1e293b;
+        --card: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--background);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* Sticky Navigation */
+      .nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--card);
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 100;
+      }
+
+      .nav-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary);
+      }
+
+      /* Hero Section */
+      .hero {
+        margin-top: 4rem;
+        padding: 3rem 1rem;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        opacity: 0.9;
+        margin-bottom: 2rem;
+      }
+
+      /* Course Grid */
+      .courses {
+        padding: 2rem 1rem;
+      }
+
+      .course-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .course-card {
+        background: var(--card);
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+      }
+
+      .course-card:hover {
+        transform: translateY(-4px);
+      }
+
+      .course-image {
+        width: 100%;
+        height: 200px;
+        background: #ddd;
+        object-fit: cover;
+      }
+
+      .course-content {
+        padding: 1.5rem;
+      }
+
+      .course-tag {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: var(--accent);
+        color: white;
+        border-radius: 1rem;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .course-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .course-price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary);
+        margin: 1rem 0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: var(--primary);
+        color: white;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+
+      .btn:hover {
+        background: var(--secondary);
+      }
+
+      /* Features Section */
+      .features {
+        padding: 3rem 1rem;
+        background: var(--card);
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .feature-item {
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 1rem;
+      }
+
+      /* Testimonials */
+      .testimonials {
+        padding: 3rem 1rem;
+      }
+
+      .testimonial-card {
+        background: var(--card);
+        padding: 2rem;
+        border-radius: 1rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .rating {
+        color: #fbbf24;
+        margin-bottom: 1rem;
+      }
+
+      /* Stats Section */
+      .stats {
+        padding: 3rem 1rem;
+        background: var(--primary);
+        color: white;
+        text-align: center;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .stat-item h3 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--text);
+        color: white;
+        padding: 3rem 1rem;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .course-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .feature-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .stats-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-content">
+        <div class="logo">TradePro</div>
+        <a href="#courses" class="btn">Get Started</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Master Trading with Expert Courses</h1>
+      <p>Learn from professional traders and start your journey today</p>
+      <a href="#courses" class="btn">Browse Courses</a>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+      <div class="course-grid">
+        <!-- Course 1 -->
+        <div class="course-card">
+          <img src="https://via.placeholder.com/600x400/cccccc/ffffff?text=Forex+Trading" alt="Forex Trading" class="course-image">
+          <div class="course-content">
+            <span class="course-tag">Beginner</span>
+            <h3 class="course-title">Forex Trading Fundamentals</h3>
+            <p>Master the basics of forex trading with our comprehensive course.</p>
+            <div class="course-price">$99</div>
+            <a href="#" class="btn">Enroll Now</a>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="course-card">
+          <img src="https://via.placeholder.com/600x400/cccccc/ffffff?text=Crypto+Trading" alt="Crypto Trading" class="course-image">
+          <div class="course-content">
+            <span class="course-tag">Intermediate</span>
+            <h3 class="course-title">Cryptocurrency Trading</h3>
+            <p>Learn to trade cryptocurrencies with confidence.</p>
+            <div class="course-price">$149</div>
+            <a href="#" class="btn">Enroll Now</a>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="course-card">
+          <img src="https://via.placeholder.com/600x400/cccccc/ffffff?text=Technical+Analysis" alt="Technical Analysis" class="course-image">
+          <div class="course-content">
+            <span class="course-tag">Advanced</span>
+            <h3 class="course-title">Technical Analysis Mastery</h3>
+            <p>Advanced chart patterns and technical indicators.</p>
+            <div class="course-price">$199</div>
+            <a href="#" class="btn">Enroll Now</a>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="course-card">
+          <img src="https://via.placeholder.com/600x400/cccccc/ffffff?text=Risk+Management" alt="Risk Management" class="course-image">
+          <div class="course-content">
+            <span class="course-tag">Essential</span>
+            <h3 class="course-title">Risk Management Strategies</h3>
+            <p>Learn to protect your capital and manage risk effectively.</p>
+            <div class="course-price">$79</div>
+            <a href="#" class="btn">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="feature-grid">
+        <div class="feature-item">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+          <h3>Lifetime Access</h3>
+          <p>Learn at your own pace with unlimited access to course materials</p>
+        </div>
+        <div class="feature-item">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <h3>Expert Instructors</h3>
+          <p>Learn from professional traders with years of experience</p>
+        </div>
+        <div class="feature-item">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          <h3>Practice Accounts</h3>
+          <p>Practice with virtual money before trading real funds</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>10K+</h3>
+          <p>Students</p>
+        </div>
+        <div class="stat-item">
+          <h3>50+</h3>
+          <p>Courses</p>
+        </div>
+        <div class="stat-item">
+          <h3>95%</h3>
+          <p>Success Rate</p>
+        </div>
+        <div class="stat-item">
+          <h3>24/7</h3>
+          <p>Support</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="testimonial-card">
+        <div class="rating">★★★★★</div>
+        <p>"The forex course completely transformed my trading approach. Highly recommended!"</p>
+        <strong>- Sarah K.</strong>
+      </div>
+      <div class="testimonial-card">
+        <div class="rating">★★★★★</div>
+        <p>"Clear explanations and practical examples. Worth every penny!"</p>
+        <strong>- Michael R.</strong>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <h3>Start Your Trading Journey Today</h3>
+      <p>Join thousands of successful traders who learned with TradePro</p>
+      <a href="#courses" class="btn">Get Started Now</a>
+    </footer>
+  </body>
+  </html>
